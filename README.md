@@ -58,15 +58,16 @@ This file will encapsulate the core RAG logic.
 ```
 
 ##### Explanation of Layers Added to improve the RAG performance:
+------------------------------------------------------------------
 ###### Query Rephrasing (Implicit in ConversationalRetrievalChain):
-Where it happens: This is handled internally by LangChain's ConversationalRetrievalChain (specifically by its question_generator component).
+This is handled internally by LangChain's ConversationalRetrievalChain (specifically by its question_generator component).
 
 Why it's important: When you ask a follow-up question like "How often she should receive health checks?" after saying "My child is 4 months old," the chain needs to understand that "she" refers to "my 4-month-old child." It rephrases the conversational query (e.g., "How often should my 4-month-old child receive health checks?") into a standalone query that is more effective for searching the vector database. This prevents the retriever from missing context that was only present in previous turns of the conversation.
 
 In the code: I've added a print statement in app.py to inform the user about this step.
 
 ###### Reranking Layer (Optional, using Cohere Rerank):
-Where it happens: This is configured within the build_conversational_rag_chain function in rag_pipeline.py. If COHERE_API_KEY is provided and the Cohere library is installed, a ContextualCompressionRetriever with CohereRerank is used.
+This is configured within the build_conversational_rag_chain function in rag_pipeline.py. If COHERE_API_KEY is provided and the Cohere library is installed, a ContextualCompressionRetriever with CohereRerank is used.
 
 Why it's important: After the initial retrieval from the vector store, you might get a set of documents that are semantically similar but not all equally relevant to the specific question. Reranking models (like Cohere's) take the original query and the retrieved documents and re-score them based on their true relevance, pushing the most pertinent documents to the top. This significantly improves the quality of the context provided to the LLM, leading to more accurate answers and reducing "hallucinations."
 
