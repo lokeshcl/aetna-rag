@@ -1,0 +1,8 @@
+PyMuPDF
+langchain
+openai
+chromadb
+tiktoken
+python-dotenv
+requests
+cohere

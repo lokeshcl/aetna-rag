@@ -1,0 +1,8 @@
+# Environment variables
+.env
+
+# ChromaDB persistence directory
+chroma_db/
+
+# PDF file
+ABHIL_Member_Handbook.pdf
