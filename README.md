@@ -45,7 +45,7 @@ This file will encapsulate the core RAG logic.
 -    Builds a LangChain ConversationalRetrievalChain for RAG with chat history, optionally including a re-ranking step.
 
 #### 4. app.py
-This will be the main application file.
+```This will be the main application file.
     - 1. Download PDF 
     - 2. Extract Text 
     - 3. Chunk Text 
@@ -54,7 +54,8 @@ This will be the main application file.
     - 6. Simple CLI Chat Interface 
             ** Invoke the RAG chain with the user's query
             ** Get the answer from the result
-            ** Optionally, print the source documents
+            ** print the source documents for reasoning
+```
 
 ##### Explanation of Layers Added to improve the RAG performance:
 ###### Query Rephrasing (Implicit in ConversationalRetrievalChain):
