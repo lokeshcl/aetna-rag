@@ -71,7 +71,6 @@ Added  OpenAI API key and Cohere API key
 ### 8. README.md
 This file will serve as your project's documentation.
 
-
 ## Setup Instructions
 
 ### 1. Clone the Repository:
@@ -106,3 +105,7 @@ Activate your virtual environment (if not already active).
 Run the main application script:
 Bash: python app.py
 -- The script will first download the PDF (if not already present), process it, build the vector store (this might take a few minutes the first time), and then start the conversational interface. Type your questions and press Enter. Type exit to quit.
+
+# Logging and Error Handling
+•	Error handling is well-implemented with try-except blocks and conditional checks to gracefully manage common failure points (network issues, missing API keys, failed processing steps).
+•	Logging is present and informative through the use of print() statements, providing visibility into the application flow and status. To improve logging we can structured Logging by replacing print() statements with Python's built-in logging module. This will allow different log levels (DEBUG, INFO, WARNING, ERROR, CRITICAL) and Configurable log outputs (console, file, etc.).
