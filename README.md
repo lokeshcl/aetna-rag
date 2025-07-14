@@ -3,7 +3,7 @@
 This project implements a Retrieval-Augmented Generation (RAG) chatbot designed to answer questions based on the Aetna Better Health of Illinois Member Handbook PDF. It uses LangChain for orchestration, PyMuPDF for PDF text extraction, OpenAI for embeddings and language model capabilities, and ChromaDB as an in-memory vector store.
 
 Here's the project structure:
-
+```
 rag-chatbot/
 ├── .env                  # Stores your OpenAI API key (NOT committed to Git)
 ├── .gitignore            # Specifies files/folders to ignore in Git
@@ -22,7 +22,7 @@ rag-chatbot/
 * **Vector Store:** Stores and retrieves relevant document chunks using ChromaDB.
 * **Conversational AI:** Utilizes OpenAI's LLM to generate contextual answers, maintaining chat history.
 * **Source Attribution:** Provides page numbers for retrieved information.
-* **Modular Design:** Organized into separate Python files for maintainability and scalability.
+* **Modular Design:** Organized into separate Python files for maintainability and scalability. ```
 
 ## Project Structure
 
