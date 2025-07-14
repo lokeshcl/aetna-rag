@@ -23,7 +23,7 @@ rag-chatbot/
 * **Vector Store:** Stores and retrieves relevant document chunks using ChromaDB.
 * **Conversational AI:** Utilizes OpenAI's LLM to generate contextual answers, maintaining chat history.
 * **Source Attribution:** Provides page numbers for retrieved information.
-* **Modular Design:** Organized into separate Python files for maintainability and scalability. ```
+* **Modular Design:** Organized into separate Python files for maintainability and scalability.
 
 ## Project Structure
 
