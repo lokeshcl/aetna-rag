@@ -13,9 +13,10 @@ rag-chatbot/
 ├── config.py             # Configuration parameters
 ├── pdf_processor.py      # Handles PDF download and text extraction
 └── rag_pipeline.py       # Manages chunking, embeddings, vector store, and RAG chain
-└── chroma_db/            # Directory for ChromaDB persistence (ignored by Git)
-## Features
+└── chroma_db/            # Directory for ChromaDB persistence (ignored by Git) ```
 
+## Features
+------------
 * **PDF Ingestion:** Downloads and extracts text from the specified PDF document.
 * **Text Chunking:** Splits the document into manageable chunks for efficient retrieval.
 * **Vector Embeddings:** Converts text chunks into numerical vectors using OpenAI embeddings.
