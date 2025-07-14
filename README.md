@@ -5,7 +5,7 @@ This project implements a Retrieval-Augmented Generation (RAG) chatbot designed 
 Here's the project structure:
 ```
 rag-chatbot/
-├── .env                  # Stores your OpenAI API key (NOT committed to Git)
+├── .env                  # Stores the OpenAI API key (NOT committed to Git)
 ├── .gitignore            # Specifies files/folders to ignore in Git
 ├── README.md             # Project documentation and instructions
 ├── requirements.txt      # List of Python dependencies
@@ -27,16 +27,12 @@ rag-chatbot/
 
 ## Project Structure
 
-## Setup Instructions
-If you're setting this up from a Git repository, clone it first:
-
-```bash
-git clone <your-repo-url>
+## Setup Instructions- bash
+git clone git@github.com:lokeshcl/aetna-rag.git
 cd rag-chatbot
 
-
 ### 1. config.py
-This file will hold all your configurable parameters, making it easy to adjust settings without touching the core logic.
+This file will hold all the configurable parameters, making it easy to adjust settings without touching the core logic.
 
 ### 2. pdf_processor.py
 This file will contain functions related to handling the PDF.
@@ -48,7 +44,7 @@ This file will encapsulate the core RAG logic.
 -    Builds a LangChain ConversationalRetrievalChain for RAG with chat history, optionally including a re-ranking step."""
 
 ### 4. app.py
-This will be your main application file.
+This will be the main application file.
     - 1. Download PDF 
     - 2. Extract Text 
     - 3. Chunk Text 
@@ -60,17 +56,17 @@ This will be your main application file.
             ** Optionally, print the source documents
 
 ### 5. requirements.txt
-This file lists all the Python packages your project depends on.
+This file lists all the Python packages the project depends on.
 
 ### 6. .gitignore
-This file tells Git which files and directories to ignore when committing to your repository. This is crucial for security (not committing API keys) and cleanliness (not committing generated data).
+This file tells Git which files and directories to ignore when committing to the repository. This is crucial for security (not committing API keys) and cleanliness (not committing generated data).
 
 ### 7. .env (Create manually, do NOT commit to Git)
 Created a file named .env in the root of rag-chatbot directory.
 Added  OpenAI API key and Cohere API key
 
 ### 8. README.md
-This file will serve as your project's documentation.
+This file will serve as the project's documentation.
 
 ## Setup Instructions
 
@@ -92,20 +88,20 @@ Once the virtual environment is active, install the required packages:
 pip install -r requirements.txt
 
 ### 5. Configure API Keys
-Create a file named .env in the root directory of the rag-chatbot project (next to app.py). Add your OpenAI API key to this file:
-OPENAI_API_KEY="your_openai_api_key_here"
+Create a file named .env in the root directory of the rag-chatbot project (next to app.py). Add  OpenAI API key to this file:
+OPENAI_API_KEY="openai_api_key_here"
 To enable reranking in config.py, also add:
-# COHERE_API_KEY="your_cohere_api_key_here"
+# COHERE_API_KEY="cohere_api_key_here"
 
-Replace your_openai_api_key_here and your_cohere_api_key_here with your actual API keys. Do not commit this file to your Git repository. 
+Replace openai_api_key_here and cohere_api_key_here with actual API keys. Do not commit this file to the Git repository. 
 The .gitignore file is configured to prevent this.
 
 ### 6. How to Run the Chatbot
-Activate your virtual environment (if not already active).
+Activate the virtual environment (if not already active).
 
 Run the main application script:
 Bash: python app.py
--- The script will first download the PDF (if not already present), process it, build the vector store (this might take a few minutes the first time), and then start the conversational interface. Type your questions and press Enter. Type exit to quit.
+-- The script will first download the PDF (if not already present), process it, build the vector store (this might take a few minutes the first time), and then start the conversational interface. Type the questions and press Enter. Type exit to quit.
 
 # Logging and Error Handling
 •	Error handling is well-implemented with try-except blocks and conditional checks to gracefully manage common failure points (network issues, missing API keys, failed processing steps).
