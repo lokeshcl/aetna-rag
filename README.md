@@ -70,7 +70,7 @@ Added  OpenAI API key and Cohere API key
 This file will serve as the project's documentation.
 
 ## Setup Instructions
-
+----------------------
 ### 1. Clone the Repository:
 **bash**
     git clone git@github.com:lokeshcl/aetna-rag.git
@@ -92,7 +92,7 @@ pip install -r requirements.txt
 Create a file named .env in the root directory of the rag-chatbot project (next to app.py). Add  OpenAI API key to this file:
 OPENAI_API_KEY="openai_api_key_here"
 To enable reranking in config.py, also add:
-# COHERE_API_KEY="cohere_api_key_here"
+COHERE_API_KEY="cohere_api_key_here"
 
 Replace openai_api_key_here and cohere_api_key_here with actual API keys. Do not commit this file to the Git repository. 
 The .gitignore file is configured to prevent this.
@@ -104,6 +104,6 @@ Run the main application script:
 Bash: python app.py
 -- The script will first download the PDF (if not already present), process it, build the vector store (this might take a few minutes the first time), and then start the conversational interface. Type the questions and press Enter. Type exit to quit.
 
-# Logging and Error Handling
+## Logging and Error Handling
 •	Error handling is well-implemented with try-except blocks and conditional checks to gracefully manage common failure points (network issues, missing API keys, failed processing steps).
 •	Logging is present and informative through the use of print() statements, providing visibility into the application flow and status. To improve logging we can structured Logging by replacing print() statements with Python's built-in logging module. This will allow different log levels (DEBUG, INFO, WARNING, ERROR, CRITICAL) and Configurable log outputs (console, file, etc.).
